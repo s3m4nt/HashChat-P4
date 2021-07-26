@@ -3,6 +3,7 @@ import { Provider } from 'react-supabase'
 import React, {useState} from 'react'
 import ChatScreen from './components/ChatScreen'
 import LoginScreen from './components/LoginScreen'
+import Header from './components/Header'
 
 
 // This is a public key
@@ -13,10 +14,12 @@ function App() {
   const [userName, setUserName] = useState(null)
 
   return (
-
+    <>
+<Header />
     <Provider value={client}>
     { userName ? (<ChatScreen userName={userName} onLogOut={() => setUserName(null)} />) : (<LoginScreen onLogIn={setUserName} />) }
     </Provider>
+    </>
   )
 }
 

@@ -15,10 +15,10 @@ function LoginScreen(props) {
             props.onLogIn(inputTxt)
             console.log(inputTxt)
         }}>
-           <input type="text" value={inputTxt} placeholder="" onChange={(e) => {
+           <input type="text" value={inputTxt} placeholder="Your user name here" onChange={(e) => {
                setInputTxt(e.target.value)
            }} />
-           <input type="submit" value="submit/login" />
+           <input type="submit" value="Submit" />
         </form>
         </div>
     )
