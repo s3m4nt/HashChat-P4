@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import ChatScreen from './components/ChatScreen'
 import LoginScreen from './components/LoginScreen'
 
+
 // This is a public key
 const client = createClient('https://oegyhpowltbywwfgnccm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyNzI2NDIwNSwiZXhwIjoxOTQyODQwMjA1fQ.7P8dUGBYRF75FFBVuMSKrr2cKtLdS2FjCtO6dy2cRhU')
 
