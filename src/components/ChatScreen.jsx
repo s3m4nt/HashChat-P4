@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import header01 from '../assets/images/HashChat_01.png'
+import Header from './Header'
 
 function ChatScreen(props) {
 
@@ -23,9 +24,10 @@ function ChatScreen(props) {
 console.log(data)
     return (
         <>
-        <div>
-            <div>
-                {props.userName}
+        <Header onLogOut={props.onLogOut} />
+        <div style={{textAlign: 'center'}}>
+            <div className="mt-8">
+                Hello, {props.userName} ... welcome to HashChat<br/>
                 <button onClick={props.onLogOut}>logout</button>
             </div>
             <div>
