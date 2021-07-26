@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
 import { useRealtime, useInsert } from 'react-supabase'
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import header01 from '../assets/images/HashChat_01.png'
 
 function ChatScreen(props) {
 
@@ -12,6 +22,7 @@ function ChatScreen(props) {
     if (error) return <p>Oh no... {error.message}</p>
 console.log(data)
     return (
+        <>
         <div>
             <div>
                 {props.userName}
@@ -46,6 +57,18 @@ console.log(data)
                 })}
             </ul>
         </div>
+        <div>
+        <Typography variant="body2" color="textSecondary" align="center">
+  {'this is text that\'s wrapped into curlies at ChatScreen'}
+  {/* <Link color="inherit" href="https://material-ui.com/">
+    HashChat
+  </Link>{' '} */}
+  {/* {new Date().getFullYear()} */}
+</Typography>
+
+</div>
+</>
+
     )
 }
 

@@ -1,0 +1,42 @@
+.wrapper {
+    /* min-height: 100vh; */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+
+    color: #000;
+}
+
+.columns {
+    display: flex;
+    flex: 1;
+}
+
+.main {
+    flex: 1;
+    order: 2;
+
+}
+
+.sidebar-first {
+    width: 20%;
+
+    order: 1;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.sidebar-second {
+    width: 20%;
+    order: 3;
+    text-align: right;
+    margin-top: 65px;
+    margin-right: 65px;
+
+}
