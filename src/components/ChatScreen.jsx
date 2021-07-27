@@ -45,7 +45,7 @@ console.log(data)
     <form onSubmit={async (e) => {
     e.preventDefault()
     if (inputTxt === '') {
-        alert('message cant be empty')
+        alert('Your HashChat message can\'t be empty!')
         return
     }
 

@@ -127,7 +127,8 @@ export default function LoginScreen(props) {
           }
           props.onLogIn(inputTxt)
             }}
-            //   type="submit"
+            // this fixes bug where page refreshes instead of sending form data
+              type="submit"
               fullWidth
               variant="contained"
               color="primary"
