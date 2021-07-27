@@ -25,7 +25,7 @@
     width: 20%;
     order: 1;
     margin-top: 25px;
-    margin-left: 25px;
+    margin-left: 62px;
 }
 
 .sidebar-second {
@@ -41,16 +41,41 @@
     text-shadow: 0px 1px 0px #fff;  
     outline: none; 
     border: none;
-    background-color: #fcddce;
+    background-color: lightgray;
     width: 40%;
     height: 40px;
     border-radius: 12px;
-    
     padding: 12px 20px;
     box-sizing: border-box;
     resize: none;
     color: black;
     font-size: 16px;
-    
+}
 
+li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+ul {
+    border-left: 4px dotted orange;
+}
+
+.chats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 555px;
+    margin: 15px 0 15px 0;
+    /* border: 1px solid black; */
+}
+
+.outer-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid blue; */
+    width: 100%;
 }

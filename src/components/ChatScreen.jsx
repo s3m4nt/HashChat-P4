@@ -6,6 +6,7 @@ import {FormControl,InputLabel, Input, FormHelperText } from '@material-ui/core'
 // import { SendIcon } from '@material-ui/icons/SendIcon';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import Header from './Header'
+import Copyright from './Copyright'
 
 function ChatScreen(props) {
 
@@ -22,6 +23,7 @@ console.log(data)
         <Header 
         onLogOut={props.onLogOut}
         bgcolor="background.paper" 
+
         />
         
         <div style={{textAlign: 'center'}}>
@@ -30,15 +32,15 @@ console.log(data)
           bgcolor="background.paper"
           fontFamily="h1.fontFamily"
           fontWeight="bold"
-          fontSize={{ xs: '1.2rem', sm: '1.2rem', md: '2.0rem' }}
+          fontSize={{ xs: '1.2rem', sm: '1.2rem', md: '1.8rem' }}
           p={{ xs: 2, sm: 3, md: 4 }}
         >
-                Hello, <span style={{color:'#ff671d'}}>{props.userName}</span> – welcome to HashChat<br/>
+                Hello, <span style={{color:'#ff671d', borderBottom: '#ff671d dotted 1px'}}>{props.userName}!</span> Welcome to HashChat<br/>
                 {/* <button onClick={props.onLogOut}>logout</button> */}
             </Box>
 
 
-            <Box>
+            <Box bgcolor="background.paper">
             
     <form onSubmit={async (e) => {
     e.preventDefault()
@@ -65,33 +67,30 @@ console.log(data)
     value="Send"
     variant="contained" 
     color="white"
-    style={{background: '#f2844d', textTransform: 'none'}}
+    style={{background: '#f2844d', color: 'white', textTransform: 'none', marginLeft: '6px'}}
     >
     Send your HashChat
     </Button>
 </form>
-
-
-
-
             </Box>
-            <Box mt="12">
+            <Box className="outer-chat">
+            <div className="chats">
             <ul>
             {/* // li the message and username */}
                 {data.map((message) =>{
-                    return <li key={message.id}>{message.username} : {message.text}</li>
+                    if (message.text === message.text){
+                    return <li key={message.id}><span style={{fontWeight: 'bold', color: '#000'}}>{message.username}</span> : {message.text}</li>
+                } else {
+                    return <li style={{color:'orange'}} key={message.id}>{message.username} : {message.text}</li>
+                }
                 })}
             </ul>
+            </div>
         </Box>
-        <Box>
-        <Typography variant="body2" color="textSecondary" align="center">
-  {'this is text that\'s wrapped into curlies at ChatScreen'}
-  {/* <Link color="inherit" href="https://material-ui.com/">
-    HashChat
-  </Link>{' '} */}
-  {/* {new Date().getFullYear()} */}
-</Typography>
-</Box>
+        <Box style={{borderTop: '10px'}}>
+        {/* <hr style={{color: 'lightgray'}} /> */}
+              <Copyright />
+            </Box>
 </div>
 </>
 

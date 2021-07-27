@@ -10,18 +10,18 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import photo01 from '../assets/images/Photo03.png'
 import logo from '../assets/images/HashChat_01.png'
+import Copyright from './Copyright';
 
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-        HashChat
-      {' '}
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography style={{fontSize: '12px', fontStyle: 'italic'}} variant="body2" color="textSecondary" align="center">
+//       {'Copyright © '}
+//         HashChat
+//       {' '}
+//       {new Date().getFullYear()}
+//     </Typography>
+//   );
+// }
 
 function textComp() {
   return (
@@ -115,6 +115,7 @@ export default function LoginScreen(props) {
               name="email"
               autoComplete="email"
               autoFocus
+            //   style={{border: 'black'}}
             />
 
             <Button
@@ -131,7 +132,7 @@ export default function LoginScreen(props) {
               variant="contained"
               color="primary"
               className={classes.submit}
-              style={{textTransform: 'none'}}
+              style={{textTransform: 'none', background: '#ff671d'}}
             >
               Enter HashChat
             </Button>
