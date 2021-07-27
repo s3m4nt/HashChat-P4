@@ -20,7 +20,12 @@ function Header(props) {
             <div className="columns">
                 <main className="main">Content: Flexible width{props.userName}</main>
                 <aside className="sidebar-first"><img style={{ width: '200px'}} src={header01} alt="HashChat Logo" /></aside>
-                <aside className="sidebar-second"><button onClick={props.onLogOut}>logout</button></aside>
+                <aside className="sidebar-second">
+                <Button 
+                onClick={props.onLogOut}
+                >logout
+                </Button>
+                </aside>
             </div>
         </section>
     </div>
