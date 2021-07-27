@@ -1,15 +1,8 @@
 import React, { useState } from 'react'
 import { useRealtime, useInsert } from 'react-supabase'
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import header01 from '../assets/images/HashChat_01.png'
+import Box from '@material-ui/core/Box'
+import Typography from '@material-ui/core/Typography'
+import {FormControl,InputLabel, Input, FormHelperText } from '@material-ui/core'
 import Header from './Header'
 
 function ChatScreen(props) {
@@ -24,34 +17,51 @@ function ChatScreen(props) {
 console.log(data)
     return (
         <>
-        <Header onLogOut={props.onLogOut} />
+        <Header 
+        onLogOut={props.onLogOut}
+        bgcolor="background.paper" 
+        />
         <div style={{textAlign: 'center'}}>
-            <div className="mt-8">
-                Hello, {props.userName} ... welcome to HashChat<br/>
-                <button onClick={props.onLogOut}>logout</button>
-            </div>
-            <div>
-            <form onSubmit={async (e) => {
-            e.preventDefault()
-            if (inputTxt === '') {
-                alert('message cant be empty')
-                return
-            }
+        <Box
+          color="#000"
+          bgcolor="background.paper"
+          fontFamily="h1.fontFamily"
+          fontWeight="bold"
+          fontSize={{ xs: '1.2rem', sm: '1.2rem', md: '2.0rem' }}
+          p={{ xs: 2, sm: 3, md: 4 }}
+        >
+                Hello, <span style={{color:'#ff671d'}}>{props.userName}</span> – welcome to HashChat<br/>
+                {/* <button onClick={props.onLogOut}>logout</button> */}
+            </Box>
+
+
+            <Box>
             
-            // props.onLogIn(inputTxt)
-            console.log(inputTxt)
-            const {error} = await insertMessage({ username: props.userName, text: inputTxt })
-            setInputTxt('') 
-            if (error) {
-                console.log(error)
-            }
-        }}>
-           <input type="text" value={inputTxt} placeholder="" onChange={(e) => {
-               setInputTxt(e.target.value)
-           }} />
-           <input type="submit" value="submit/login" />
-        </form>
-            </div>
+    <form onSubmit={async (e) => {
+    e.preventDefault()
+    if (inputTxt === '') {
+        alert('message cant be empty')
+        return
+    }
+
+    // props.onLogIn(inputTxt)
+    // console.log(inputTxt)
+    const {error} = await insertMessage({ username: props.userName, text: inputTxt })
+    setInputTxt('') 
+    if (error) {
+        console.log(error)
+    }
+}}>
+    <input type="text" value={inputTxt} placeholder="" onChange={(e) => {
+        setInputTxt(e.target.value)
+    }} />
+    <input type="submit" value="Send" />
+</form>
+
+
+
+
+            </Box>
             <ul>
             {/* // li the message and username */}
                 {data.map((message) =>{

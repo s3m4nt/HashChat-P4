@@ -18,7 +18,7 @@ function Header(props) {
 <div class="wrapper">
         <section className="content">
             <div className="columns">
-                <main className="main">Content: Flexible width{props.userName}</main>
+                <main className="main"></main>
                 <aside className="sidebar-first"><img style={{ width: '200px'}} src={header01} alt="HashChat Logo" /></aside>
                 <aside className="sidebar-second">
                 <Button 
