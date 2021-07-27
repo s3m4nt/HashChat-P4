@@ -69,16 +69,19 @@ console.log(data)
     color="white"
     style={{background: '#f2844d', color: 'white', textTransform: 'none', marginLeft: '6px'}}
     >
-    Send your HashChat
+    Send your HashChat 
     </Button>
+    
 </form>
             </Box>
             <Box className="outer-chat">
             <div className="chats">
             <ul>
             {/* // li the message and username */}
+            
                 {data.map((message) =>{
-                    if (message.text === message.text){
+                    console.log(message.username)
+                    if (message.username === message.username){
                     return <li key={message.id}><span style={{fontWeight: 'bold', color: '#000'}}>{message.username}</span> : {message.text}</li>
                 } else {
                     return <li style={{color:'orange'}} key={message.id}>{message.username} : {message.text}</li>
