@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useRealtime, useInsert } from 'react-supabase'
-import Box from '@material-ui/core/Box'
+import { Box, Button } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import {FormControl,InputLabel, Input, FormHelperText } from '@material-ui/core'
+// import { SendIcon } from '@material-ui/icons/SendIcon';
+import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import Header from './Header'
 
 function ChatScreen(props) {
@@ -21,6 +23,7 @@ console.log(data)
         onLogOut={props.onLogOut}
         bgcolor="background.paper" 
         />
+        
         <div style={{textAlign: 'center'}}>
         <Box
           color="#000"
@@ -52,24 +55,35 @@ console.log(data)
         console.log(error)
     }
 }}>
-    <input type="text" value={inputTxt} placeholder="" onChange={(e) => {
+    <input type="text" className="chat-message" value={inputTxt} placeholder="" onChange={(e) => {
         setInputTxt(e.target.value)
     }} />
-    <input type="submit" value="Send" />
+    {/* <input type="submit" value="Send" /> */}
+    <Button 
+    startIcon={<SendOutlinedIcon />}
+    type="submit"
+    value="Send"
+    variant="contained" 
+    color="white"
+    style={{background: '#f2844d', textTransform: 'none'}}
+    >
+    Send your HashChat
+    </Button>
 </form>
 
 
 
 
             </Box>
+            <Box mt="12">
             <ul>
             {/* // li the message and username */}
                 {data.map((message) =>{
                     return <li key={message.id}>{message.username} : {message.text}</li>
                 })}
             </ul>
-        </div>
-        <div>
+        </Box>
+        <Box>
         <Typography variant="body2" color="textSecondary" align="center">
   {'this is text that\'s wrapped into curlies at ChatScreen'}
   {/* <Link color="inherit" href="https://material-ui.com/">
@@ -77,7 +91,7 @@ console.log(data)
   </Link>{' '} */}
   {/* {new Date().getFullYear()} */}
 </Typography>
-
+</Box>
 </div>
 </>
 
