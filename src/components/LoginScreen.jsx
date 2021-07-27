@@ -8,9 +8,9 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import photo01 from '../assets/images/Photo01.png'
-import photo02 from '../assets/images/Photo02.png'
-import photo03 from '../assets/images/Photo03.png'
+import photo01 from '../assets/images/Photo03.png'
+import logo from '../assets/images/HashChat_01.png'
+
 
 function Copyright() {
   return (
@@ -99,7 +99,7 @@ export default function LoginScreen(props) {
         <div className={classes.paper}>
 
           <Typography component="h1" variant="h5">
-            Welcome to HashChat
+            <img src={logo} style={{ width: '333px'}} />
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
