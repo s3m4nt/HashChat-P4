@@ -7,7 +7,6 @@ function Copyright() {
         {new Date().getFullYear()}
           &nbsp;HashChat
         {' '}
-
       </Typography>
     );
   }

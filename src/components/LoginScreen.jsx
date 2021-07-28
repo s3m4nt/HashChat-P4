@@ -1,37 +1,25 @@
-import React, {useState} from 'react';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useState} from 'react'
+import Button from '@material-ui/core/Button'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import TextField from '@material-ui/core/TextField'
+import Link from '@material-ui/core/Link'
+import Paper from '@material-ui/core/Paper'
+import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 import photo01 from '../assets/images/Photo03.png'
 import logo from '../assets/images/HashChat_01.png'
-import Copyright from './Copyright';
+import Copyright from './Copyright'
 
-// function Copyright() {
-//   return (
-//     <Typography style={{fontSize: '12px', fontStyle: 'italic'}} variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//         HashChat
-//       {' '}
-//       {new Date().getFullYear()}
-//     </Typography>
-//   );
-// }
 
-function textComp() {
+const textComp = () => {
   return (
   <Typography variant="body2" color="textSecondary" align="center">
-  {'this is text that\'s wrapped into curlies'}
-  <Link color="inherit" href="https://material-ui.com/">
-    HashChat
-  </Link>{' '}
-  {new Date().getFullYear()}
-</Typography>
+    <Link color="inherit" href="https://material-ui.com/">
+      HashChat
+    </Link>{' '}
+  </Typography>
   )
 }
 
@@ -67,29 +55,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginScreen(props) {
+///////////////////////
+
+function LoginScreen(props) {
+
   const classes = useStyles();
 
   const [inputTxt, setInputTxt] = useState('')
-
-//   return (
-//       <div style={{textAlign: 'center'}}>
-//       <form onSubmit={(e) => {
-//           e.preventDefault()
-//           if (inputTxt === '') {
-//               alert('Username cant be empty')
-//               return
-//           }
-//           props.onLogIn(inputTxt)
-//           console.log(inputTxt)
-//       }}>
-//          <input type="text" value={inputTxt} placeholder="Your user name here" onChange={(e) => {
-//              setInputTxt(e.target.value)
-//          }} />
-//          <input type="submit" value="Submit" />
-//       </form>
-//       </div>
-//   )
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -97,7 +69,6 @@ export default function LoginScreen(props) {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-
           <Typography component="h1" variant="h5">
             <img src={logo} style={{ width: '333px'}} />
           </Typography>
@@ -149,3 +120,5 @@ export default function LoginScreen(props) {
     </Grid>
   );
 }
+
+export default LoginScreen

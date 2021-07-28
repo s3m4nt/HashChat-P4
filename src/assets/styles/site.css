@@ -2,7 +2,8 @@
     height: 150px;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(192, 191, 191);
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(129, 128, 128, 0.2));
 }
 
 .content {
@@ -78,4 +79,10 @@ ul {
     align-items: center;
     /* border: 1px solid blue; */
     width: 100%;
+}
+
+.chat-render {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
 }

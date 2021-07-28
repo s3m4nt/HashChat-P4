@@ -10,7 +10,6 @@ const client = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REAC
 function App(props) {
 
   const [userName, setUserName] = useState(null)
-
   // Set user 
   localStorage.setItem('userName', userName)
 
@@ -19,15 +18,9 @@ function App(props) {
   return (
     
     <div style={{background: 'white'}}>
-
-    {/* <Provider value={client}>
-    { savedUser ? (<ChatScreen userName={userName} onLogOut={() => localStorage.clear()} />) : (<LoginScreen onLogIn={setUserName} />) }
-    </Provider> */}
-    
-    <Provider value={client}>
-    { userName ? (<ChatScreen userName={userName} onLogOut={() => setUserName(null)} />) : (<LoginScreen onLogIn={setUserName} />) }
-    </Provider>
-
+      <Provider value={client}>
+      { userName ? (<ChatScreen userName={userName} onLogOut={() => setUserName(null)} />) : (<LoginScreen onLogIn={setUserName} />) }
+      </Provider>
     </div>
 
   )
