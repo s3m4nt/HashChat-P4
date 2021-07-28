@@ -126,6 +126,9 @@ export default function LoginScreen(props) {
               return
           }
           props.onLogIn(inputTxt)
+
+          localStorage.setItem('userName', inputTxt)
+
             }}
             // this fixes bug where page refreshes instead of sending form data
               type="submit"

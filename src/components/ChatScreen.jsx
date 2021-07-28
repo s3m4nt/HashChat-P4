@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRealtime, useInsert } from 'react-supabase'
 import { Box, Button } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
-import {FormControl,InputLabel, Input, FormHelperText } from '@material-ui/core'
-// import { SendIcon } from '@material-ui/icons/SendIcon';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import Header from './Header'
 import Copyright from './Copyright'
 
 function ChatScreen(props) {
+    
+    useEffect(() => {
+        const userName = localStorage.getItem('userName')
+        console.log(userName)
+    })
+    
+
+//     const colorArr = ['blue', 'green', 'orange', 'purple']
+
+//     const randomColor = colorArr[Math.floor(Math.random() * colorArr.length)]
+// console.log(' 🚀 ', randomColor)
 
     const [inputTxt, setInputTxt] = useState('')
     const [result, reexecute] = useRealtime('messages')
@@ -80,7 +88,7 @@ console.log(data)
             {/* // li the message and username */}
             
                 {data.map((message) =>{
-                    return <li key={message.id}><span style={{fontWeight: 'bold', color: '#000'}}>{message.username}</span> : {message.text}</li>
+                    return <li key={message.id}><span style={{fontWeight: 'bold', color: 'black'}}>{message.username} : {message.text}</span></li>
 
                 })}
             </ul>
