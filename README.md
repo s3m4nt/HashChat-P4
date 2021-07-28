@@ -3,13 +3,11 @@
 <img src="./src/assets/images/HashChat_01.png" width="500" alt="HashChat Logo">
 <!-- <img src="./src/assets/images/hashchat_logo_whitebg.png" width="250" alt="HashChat Logo"> -->
 
-### HashChat is a real-time chatroom style communication platform that can be used to bring groups together. 
+#### HashChat is a real-time chatroom style communication platform that brings groups together. 
 
-<br/>
+<hr/>
 
 Currently hosted at Netlify: <a href="https://6100bd25a9026c264d13c25d--keen-ptolemy-d6c15f.netlify.app/">https://6100bd25a9026c264d13c25d--keen-ptolemy-d6c15f.netlify.app/</a>
-
-<br/>
 
 * React - featuring useRealtime for real time chat functionality
 * Supabase.io - postgREST-ful APIs
