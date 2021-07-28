@@ -37,7 +37,7 @@ function ChatScreen(props) {
                 fontSize={{ xs: '1.2rem', sm: '1.8rem', md: '1.8rem' }}
                 p={{ xs: 2, sm: 3, md: 4 }}
                 >
-                        Hello, <span style={{color:'#ff671d', borderBottom: '#ff671d dotted 1px'}}>{props.userName}!</span> Welcome to HashChat ...<br/>
+                        Hello, <span style={{color:'#ff671d', borderBottom: '#ff671d dotted 1px'}}>{props.userName}!</span> Welcome to HashChat<br/>
                         {/* <button onClick={props.onLogOut}>logout</button> */}
                 </Box>
 
